@@ -1,12 +1,11 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { TodoAction } from "@/app/types";
 import { useTodosContext } from "@/app/context/TodoContext";
 
 export const AddTodoForm = () => {
   const [text, setText] = useState("");
-  const { todos, dispatch } = useTodosContext();
+  const { dispatch } = useTodosContext();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -27,8 +26,9 @@ export const AddTodoForm = () => {
         className="flex-1 px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-300 placeholder-slate-400"
       />
       <button
+        disabled={!text.trim()}
         type="submit"
-        className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold cursor-pointer py-3 px-6 rounded-md transition duration-300"
+        className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold cursor-pointer py-3 px-6 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
       >
         Dodaj
       </button>
