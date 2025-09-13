@@ -6,6 +6,7 @@ import {
   ReactNode,
   useState,
   useEffect,
+  useMemo,
 } from "react";
 import { useTodos } from "@/app/hooks/useTodos";
 import { Todo, TodoAction, TodoStatus } from "@/app/types";
@@ -31,19 +32,23 @@ export const TodosProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const storedFilter = getFilterFromStorage();
-    setFilter(storedFilter);
+    if (storedFilter) {
+      setFilter(storedFilter);
+    }
   }, []);
 
   useEffect(() => {
     setFilterToStorage(filter);
   }, [filter]);
 
-  const filteredTodos = todos.filter((todo) => {
-    if (filter === "all") {
-      return true;
-    }
-    return todo.status === filter;
-  });
+  const filteredTodos = useMemo(() => {
+    return todos.filter((todo) => {
+      if (filter === "all") {
+        return true;
+      }
+      return todo.status === filter;
+    });
+  }, [todos, filter]);
 
   return (
     <TodosContext.Provider

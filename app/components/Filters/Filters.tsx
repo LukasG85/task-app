@@ -31,7 +31,11 @@ export const Filters = () => {
   }
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 mb-4">
+    <div
+      className="flex flex-wrap justify-center gap-4 mb-4"
+      role="group"
+      aria-label="Filtruj zadania"
+    >
       {filtersData.map((f) => (
         <button
           key={f.id}
@@ -41,6 +45,7 @@ export const Filters = () => {
               ? "bg-emerald-500 hover:bg-emerald-600 text-white"
               : "bg-gray-200 hover:bg-gray-300"
           }`}
+          aria-pressed={filter === f.value}
         >
           {f.label}
         </button>

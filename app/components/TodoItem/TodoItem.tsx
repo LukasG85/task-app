@@ -32,7 +32,7 @@ export const TodoItem = ({ todo, dispatch }: TodoItemProps) => {
     >
       <span
         className={`flex-grow ${
-          todo.status === "completed" ? "line-through text-gray-500" : ""
+          todo.status === "completed" ? "line-through text-gray-500 " : ""
         }`}
       >
         {todo.text}
@@ -50,6 +50,7 @@ export const TodoItem = ({ todo, dispatch }: TodoItemProps) => {
       <button
         onClick={handleRemove}
         className="bg-red-400 text-white p-2 rounded hover:bg-red-600 cursor-pointer transition"
+        aria-label={`Usunie ${todo.text}`}
       >
         Usuń
       </button>
