@@ -1,6 +1,6 @@
 "use client";
 
-import { useTodosContext } from "@/app/context/TodoContext";
+import { useTodosContext } from "@/app/context/TodosProvider";
 import { TodoItem } from "@/app/components/TodoItem";
 
 export const TodoList = () => {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { useTodosContext } from "@/app/context/TodoContext";
+import { useTodosContext } from "@/app/context/TodosProvider";
 
 export const AddTodoForm = () => {
   const [text, setText] = useState("");
@@ -16,14 +16,19 @@ export const AddTodoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
+    <form
+      onSubmit={handleSubmit}
+      className="flex gap-2"
+      aria-label="Formularz dodawania"
+    >
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Nowe zadanie..."
-        aria-label="Add new todo"
+        aria-label="Dodaj nowe zadanie"
         className="flex-1 px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-300 placeholder-slate-400"
+        data-testid="add-todo-input"
       />
       <button
         disabled={!text.trim()}

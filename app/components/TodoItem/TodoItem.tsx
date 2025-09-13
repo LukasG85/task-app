@@ -50,7 +50,7 @@ export const TodoItem = ({ todo, dispatch }: TodoItemProps) => {
       <button
         onClick={handleRemove}
         className="bg-red-400 text-white p-2 rounded hover:bg-red-600 cursor-pointer transition"
-        aria-label={`Usunie ${todo.text}`}
+        aria-label={`Usun ${todo.text}`}
       >
         Usuń
       </button>
