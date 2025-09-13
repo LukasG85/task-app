@@ -1,6 +1,6 @@
 import { AddTodoForm } from "@/app/components/AddTodoForm";
 import { TodoList } from "@/app/components/TodoList";
-import { TodosProvider } from "@/app/context/TodoContext";
+import { TodosProvider } from "@/app/context/TodosProvider";
 import { Filters } from "./components/Filters";
 
 export default function HomePage() {

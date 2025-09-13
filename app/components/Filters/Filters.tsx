@@ -1,6 +1,6 @@
 "use client";
 
-import { useTodosContext } from "@/app/context/TodoContext";
+import { useTodosContext } from "@/app/context/TodosProvider";
 import { TodoStatus } from "@/app/types";
 
 const filtersData: {
@@ -24,6 +24,7 @@ export const Filters = () => {
           <div
             key={index}
             className="h-[40px] w-[120px] px-4 py-2 rounded-lg bg-gray-200 animate-pulse"
+            data-testid="button-skeleton"
           />
         ))}
       </div>
