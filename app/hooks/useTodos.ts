@@ -8,10 +8,12 @@ import {
   setTodosToStorage,
 } from "@/app/utils/localStorage";
 
-const initialTodos: Todo[] = [
-  { id: "1", text: "Nauczyć się Next.js", status: "completed" },
-  { id: "2", text: "Zrobić zakupy", status: "in-progress" },
-  { id: "3", text: "Napisać kod", status: "planned" },
+export const initialTodos: Todo[] = [
+  { id: "1", text: "Przeczytać jeden rozdział książki na temat rozwoju", status: "completed" },
+  { id: "2", text: "Nauczyć się podstawowego zwrotu w nowym języku", status: "in-progress" },
+  { id: "3", text: "Podlać wszystkie kwiaty", status: "planned" },
+  { id: "4", text: "Zrobić zakupy", status: "planned" },
+  { id: "5", text: "Iść na siłownię", status: "planned" },
 ];
 
 export const useTodos = () => {

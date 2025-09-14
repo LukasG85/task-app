@@ -20,7 +20,7 @@ export const TodoList = () => {
         {[1, 2, 3].map((item) => (
           <li key={item}>
             <div
-              className={`h-[70px] flex items-center gap-4 p-4 border border-slate-200 rounded-lg shadow-md bg-gray-100 transition duration-500 ease-in-out transform hover:shadow-lg`}
+              className={`h-[70px] flex items-center gap-4 p-4 border border-slate-200 rounded-lg shadow-md bg-gray-100 transition duration-200 ease-in-out transform hover:shadow-lg`}
             ></div>
           </li>
         ))}

@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react";
 import { describe, it, vi, expect, beforeEach } from "vitest";
-import { useTodos } from "./useTodos";
+import { initialTodos, useTodos } from "./useTodos";
 import {
   getTodosFromStorage,
   setTodosToStorage,
@@ -13,11 +13,6 @@ vi.mock("@/app/utils/localStorage", () => ({
 }));
 
 describe("useTodos()", () => {
-  const initialTodos: Todo[] = [
-    { id: "1", text: "Nauczyć się Next.js", status: "completed" },
-    { id: "2", text: "Zrobić zakupy", status: "in-progress" },
-    { id: "3", text: "Napisać kod", status: "planned" },
-  ];
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -31,7 +26,6 @@ describe("useTodos()", () => {
 
     const { result } = renderHook(() => useTodos());
 
-    await act(async () => {});
 
     expect(vi.mocked(getTodosFromStorage)).toHaveBeenCalledTimes(1);
     expect(result.current.todos).toEqual(storedTodos);
@@ -43,7 +37,6 @@ describe("useTodos()", () => {
 
     const { result } = renderHook(() => useTodos());
 
-    await act(async () => {});
 
     expect(result.current.todos).toEqual(initialTodos);
     expect(result.current.isLoading).toBe(false);
@@ -53,7 +46,6 @@ describe("useTodos()", () => {
     vi.mocked(getTodosFromStorage).mockReturnValue([]);
     const { result } = renderHook(() => useTodos());
 
-    await act(async () => {});
 
     expect(vi.mocked(setTodosToStorage)).toHaveBeenCalledTimes(1);
     expect(vi.mocked(setTodosToStorage)).toHaveBeenCalledWith(initialTodos);
@@ -77,7 +69,6 @@ describe("useTodos()", () => {
 
     expect(result.current.isLoading).toBe(false);
 
-    await act(async () => {});
     expect(result.current.isLoading).toBe(false);
   });
 });

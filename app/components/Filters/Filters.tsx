@@ -8,11 +8,11 @@ const filtersData: {
   label: string;
   value: TodoStatus | "all";
 }[] = [
-  { id: 1, label: "Wszystkie", value: "all" },
-  { id: 2, label: "Planowane", value: "planned" },
-  { id: 3, label: "W trakcie", value: "in-progress" },
-  { id: 4, label: "Zakończone", value: "completed" },
-];
+    { id: 1, label: "Wszystkie", value: "all" },
+    { id: 2, label: "Planowane", value: "planned" },
+    { id: 3, label: "W trakcie", value: "in-progress" },
+    { id: 4, label: "Zakończone", value: "completed" },
+  ];
 
 export const Filters = () => {
   const { filter, setFilter, isLoading } = useTodosContext();
@@ -41,11 +41,10 @@ export const Filters = () => {
         <button
           key={f.id}
           onClick={() => setFilter(f.value)}
-          className={`min-w-[120px] flex-1 px-4 py-2 rounded-lg cursor-pointer transition duration-300 ${
-            filter === f.value
+          className={`min-w-[120px] flex-1 px-4 py-2 rounded-lg cursor-pointer transition duration-200 ${filter === f.value
               ? "bg-emerald-500 hover:bg-emerald-600 text-white"
               : "bg-gray-200 hover:bg-gray-300"
-          }`}
+            }`}
           aria-pressed={filter === f.value}
         >
           {f.label}
