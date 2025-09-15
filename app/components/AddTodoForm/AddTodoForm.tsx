@@ -25,6 +25,7 @@ export const AddTodoForm = () => {
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
+        name="add-task"
         placeholder="Nowe zadanie..."
         aria-label="Dodaj nowe zadanie"
         className="flex-1 px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-300 placeholder-slate-400"
