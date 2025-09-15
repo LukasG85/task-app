@@ -18,7 +18,7 @@ export const AddTodoForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex gap-2"
+      className="flex flex-col md:flex-row gap-2"
       aria-label="Formularz dodawania"
     >
       <input
@@ -33,7 +33,7 @@ export const AddTodoForm = () => {
       <button
         disabled={!text.trim()}
         type="submit"
-        className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold cursor-pointer py-3 px-6 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
+        className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold cursor-pointer py-3 px-6 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition duration-200"
       >
         Dodaj
       </button>
