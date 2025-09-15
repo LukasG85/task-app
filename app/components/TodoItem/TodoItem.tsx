@@ -38,6 +38,8 @@ export const TodoItem = ({ todo, dispatch }: TodoItemProps) => {
         <select
           value={todo.status}
           onChange={handleChangeStatus}
+          name="status"
+          aria-label="Wybierz stan zadania"
           className={`h-[40px] p-2 rounded-lg cursor-pointer transition duration-200 ease-in-out ${todo.status === "in-progress" && "bg-green-200 hover:bg-green-300"
             } ${todo.status === "planned" && "bg-orange-200 hover:bg-orange-300"} ${todo.status === "completed" && "bg-gray-200 hover:bg-gray-300"
             }`}
